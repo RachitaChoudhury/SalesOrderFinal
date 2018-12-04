@@ -1,0 +1,55 @@
+<body>
+
+<div align="center">
+	<div *ngIf="showEdit">
+		<div class="container">
+			<div class="col-25">
+				<label for="fname"><b>USER NAME:</b></label>
+			</div>
+			<div class="row">
+				<div class="col-75">
+					<input type = "text" name="edituserName" [(ngModel)] = "edituserName" placeholder="User Name">
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-25">
+					<label for="fname"><b>PRODUCT NAME:</b></label>
+				</div>
+				<div class="col-75">
+					<input type = "text" name="editprodName" [(ngModel)] = "editprodName" placeholder="Product Name">
+				</div>
+			</div>
+			<br><br>			
+			<div class="row">
+					<span><input type = "submit" value="SAVE" (click) = "editCustomer()">&nbsp;
+					<input type = "submit" value="CANCEL" (click) = "cancelCustomer()"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<table  id="customers" align="center">
+	<thead>
+	<tr>
+		<th>ID</th>
+		<th>USER NAME</th>
+		<th>PRODUCT NAME</th>
+		<th>DELETE BUTTON</th>
+		<th>EDIT BUTTON</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let c of customers; let i = index">
+			<td align="center">{{ c.id }}</td>
+			<td align="center">{{ c.userName }}</td>
+			<td align="center">{{ c.prodName }}</td>
+			<td><input type="submit" value="Delete" (click)="deleteCustomer(c)"></td>
+			<td><input type="submit" value="Edit" (click)="edit(i)"></td>
+	</tr>
+	</tbody>
+</table>
+<br>
+<br>
+<br>
+
+</body>

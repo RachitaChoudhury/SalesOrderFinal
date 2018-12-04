@@ -1,0 +1,30 @@
+<body>
+ 
+  <div align = "center" class = "a">
+    <form>
+       <h4 align="center">Add SalesOrder</h4>
+	   <label for="userName"><b>User Name</b></label><br>
+      <input type="text" [(ngModel)]="customer.userName" placeholder="User Name" name="userName"  id="userName" required><br>
+      <label for="prodName"><b>Product Name</b></label><br>
+      <input type="text" [(ngModel)]="customer.prodName" placeholder="Product Name" name="prodName" id="prodName" required><br>
+     
+      <input type="submit" value="Create" (click)="create()"><br>
+    </form>
+  </div>
+ <div align="center" class = "b">
+	<div *ngIf="showAlert">
+			<div class="col-25">
+				<p> Order created successfully </p>
+				<input type="submit" value="OK" (click)="ok()"><br>
+			</div>
+	</div>
+</div>
+<div align="center" class = "b">
+	<div *ngIf="showError">
+			<div class="col-25">
+				<p> Invalid Details </p>
+				<input type="submit" value="OK" (click)="ok()"><br>
+			</div>
+	</div>
+</div> 
+</body>
